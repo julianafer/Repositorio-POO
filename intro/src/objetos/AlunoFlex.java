@@ -3,41 +3,43 @@ package objetos;
 import java.util.Arrays;
 
 public class AlunoFlex {
-
-	public String nome;
-	public String matricula;
-	public int[] notas;
+	private String nome;
+	private int[] notas;
 	
-	public AlunoFlex(String nome, String matricula, int[] notas) {
+	
+	public AlunoFlex(String nome, int... notas) {
 		this.nome = nome;
-		this.matricula = matricula;
 		this.notas = notas;
 	}
 	
-	public String getNome() {
-		return nome;
-	}
-	
 	public int getMedia() {
-		int soma = 0;
-		for (int n : notas)
-			soma += n;
-		int media = soma / notas.length;
+		float soma = 0;
+		for(int valor : notas)
+			soma += valor;
+		float media = soma / notas.length;
 		return Math.round(media);
 	}
-	
+
 	public String getSituacao() {
-		if (this.getMedia() >= 70)
+		if(this.getMedia() >= 70)
 			return "aprovado";
 		else
-			if (this.getMedia() >= 40)
+			if(this.getMedia() >= 40)
 				return "final";
 			else
 				return "reprovado";
 	}
 
-	public String toString() {
-		return "AlunoFlex [nome=" + nome + ", matricula=" + matricula + ", notas=" + Arrays.toString(notas) + "]";
+	public String getNome() {
+		return nome;
 	}
-	
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String toString() {
+		return "AlunoFlex [nome=" + nome + ", notas=" + Arrays.toString(notas) + "]";
+	}
+
 }
