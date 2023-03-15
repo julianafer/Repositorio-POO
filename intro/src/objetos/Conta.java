@@ -60,7 +60,9 @@ public class Conta {
 	}
 	
 	public Conta clonar() {
-		return new Conta(this.numero, this.cpf);
+		Conta novaConta = new Conta(this.numero, this.cpf);
+		novaConta.creditar(this.getSaldo());
+		return novaConta;
 	}
 
 	// método toString
