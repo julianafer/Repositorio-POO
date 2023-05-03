@@ -1,3 +1,4 @@
+teste
 /.metadata/
 intro/bin
 intro/.project
@@ -5,4 +6,3 @@ intro/.classpath
 intro/src/module-info.java
 intro/.settings/org.eclipse.jdt.core.prefs
 intro/.settings/org.eclipse.core.resources.prefs
-teste
